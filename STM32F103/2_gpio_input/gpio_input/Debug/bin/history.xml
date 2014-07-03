@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.8.4 -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=gpio_input.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\gpio_input -TC:\CooCox\CoIDE\configuration\ProgramData\gpio_input/arm-gcc-link.ld -g">
+      <target file="gpio_input.elf" lastModified="146fd3fced5">
+         <source file="..\obj\system_stm32f10x.o" lastModified="146fd3fcb69"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="146fd3fcbaa"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="146fd3fcc1f"/>
+         <source file="..\obj\main.o" lastModified="146fd3fcc79"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="146fd3fccfc"/>
+      </target>
+   </processor>
+</history>
