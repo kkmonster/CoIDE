@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103C8 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -ID:\Git\CoIDE\STM32F103 -ID:\Git\CoIDE\STM32F103\4_adc\cmsis_boot -ID:\Git\CoIDE\STM32F103\4_adc\stm_lib -ID:\Git\CoIDE\STM32F103\4_adc\stm_lib\inc -ID:\Git\CoIDE\STM32F103\4_adc -ID:\Git\CoIDE\STM32F103\4_adc\cmsis">
+      <target file="stm32f10x_rcc.o" lastModified="14702f212d3">
+         <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="1470295d2c1"/>
+      </target>
+      <target file="startup_stm32f10x_md.o" lastModified="14702f21180">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="1470295d2b6"/>
+      </target>
+      <target file="system_stm32f10x.o" lastModified="14702f2113d">
+         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="1470295d2ba"/>
+      </target>
+      <target file="stm32f10x_adc.o" lastModified="14702f2136a">
+         <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="147029603f2"/>
+      </target>
+      <target file="main.o" lastModified="14702f5bb07">
+         <source file="..\..\..\main.c" lastModified="14702f5b816"/>
+      </target>
+      <target file="stm32f10x_gpio.o" lastModified="14702f211f9">
+         <source file="..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="1470295d2b3"/>
+      </target>
+   </processor>
+</history>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.8.4 -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=gpio_adc.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\gpio_adc -TC:\CooCox\CoIDE\configuration\ProgramData\gpio_adc/arm-gcc-link.ld -g">
+      <target file="gpio_adc.elf" lastModified="14702f5bcfa">
+         <source file="..\obj\system_stm32f10x.o" lastModified="14702f2113d"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="14702f21180"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="14702f211f9"/>
+         <source file="..\obj\main.o" lastModified="14702f5bb07"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="14702f212d3"/>
+         <source file="..\obj\stm32f10x_adc.o" lastModified="14702f2136a"/>
+      </target>
+   </processor>
+</history>
