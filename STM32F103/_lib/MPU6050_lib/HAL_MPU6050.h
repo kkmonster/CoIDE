@@ -49,7 +49,7 @@ THE SOFTWARE.
 #define MPU6050_I2C_SCL_Pin          GPIO_Pin_10
 #define MPU6050_I2C_SDA_Pin          GPIO_Pin_11
 #define MPU6050_I2C_RCC_Port         RCC_APB2Periph_GPIOB
-#define MPU6050_I2C_Speed            100000 // 100kHz standard mode
+#define MPU6050_I2C_Speed            400000 // 400kHz fast mode
 
 /**
 *@}
