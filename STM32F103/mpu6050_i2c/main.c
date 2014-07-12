@@ -2,6 +2,12 @@
 #include "cmsis_boot/stm32f10x.h"
 #include "cmsis_boot/stm32f10x_conf.h"
 #include "mpu6050_lib/MPU6050.h"
+#include "user_setup/user_initial.h"
+
+
+
+
+
 
 void delay (vu32 ms)
 {

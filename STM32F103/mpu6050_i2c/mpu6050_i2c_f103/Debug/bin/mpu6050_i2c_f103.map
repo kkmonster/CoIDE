@@ -536,6 +536,22 @@ Discarded input sections
                 0x00000000       0x5c ..\obj\stm32f10x_i2c.o
  .text.I2C_ClearITPendingBit
                 0x00000000       0x2c ..\obj\stm32f10x_i2c.o
+ .text          0x00000000        0x0 ..\obj\user_initial.o
+ .data          0x00000000        0x0 ..\obj\user_initial.o
+ .bss           0x00000000        0x0 ..\obj\user_initial.o
+ .text.DMA_setup
+                0x00000000        0xc ..\obj\user_initial.o
+ .debug_info    0x00000000       0xa7 ..\obj\user_initial.o
+ .debug_abbrev  0x00000000       0x63 ..\obj\user_initial.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\user_initial.o
+ .debug_ranges  0x00000000       0x10 ..\obj\user_initial.o
+ .debug_line    0x00000000      0x173 ..\obj\user_initial.o
+ .debug_str     0x00000000      0x171 ..\obj\user_initial.o
+ .comment       0x00000000       0x71 ..\obj\user_initial.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\user_initial.o
+ .debug_frame   0x00000000       0x28 ..\obj\user_initial.o
 
 Memory Configuration
 
@@ -810,6 +826,7 @@ LOAD ..\obj\stm32f10x_dma.o
 LOAD ..\obj\misc.o
 LOAD ..\obj\MPU6050.o
 LOAD ..\obj\stm32f10x_i2c.o
+LOAD ..\obj\user_initial.o
 START GROUP
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2014q2/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg.a
@@ -860,14 +877,14 @@ OUTPUT(mpu6050_i2c_f103.elf elf32-littlearm)
  .debug_ranges  0x000001f8       0xa0 ..\obj\MPU6050.o
  .debug_ranges  0x00000298      0x110 ..\obj\stm32f10x_i2c.o
 
-.debug_line     0x00000000     0x1689
+.debug_line     0x00000000     0x168b
  .debug_line    0x00000000      0x21e ..\obj\system_stm32f10x.o
  .debug_line    0x0000021e       0xa9 ..\obj\startup_stm32f10x_md.o
  .debug_line    0x000002c7      0x3c3 ..\obj\stm32f10x_gpio.o
- .debug_line    0x0000068a      0x1dc ..\obj\main.o
- .debug_line    0x00000866      0x4d1 ..\obj\stm32f10x_rcc.o
- .debug_line    0x00000d37      0x467 ..\obj\MPU6050.o
- .debug_line    0x0000119e      0x4eb ..\obj\stm32f10x_i2c.o
+ .debug_line    0x0000068a      0x1de ..\obj\main.o
+ .debug_line    0x00000868      0x4d1 ..\obj\stm32f10x_rcc.o
+ .debug_line    0x00000d39      0x467 ..\obj\MPU6050.o
+ .debug_line    0x000011a0      0x4eb ..\obj\stm32f10x_i2c.o
 
 .debug_str      0x00000000     0x11ea
  .debug_str     0x00000000      0x28f ..\obj\system_stm32f10x.o
