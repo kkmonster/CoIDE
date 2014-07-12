@@ -47,6 +47,7 @@ void MPU6050_Initialize()
 {
     MPU6050_SetClockSource(MPU6050_CLOCK_PLL_XGYRO);
     MPU6050_SetFullScaleGyroRange(MPU6050_GYRO_FS_250);
+    MPU6050_SetDigitalLowPassFilter(MPU6050_DLPF_BW_42) ;
     MPU6050_SetFullScaleAccelRange(MPU6050_ACCEL_FS_2);
     MPU6050_SetSleepModeStatus(DISABLE); 
 }
@@ -111,6 +112,25 @@ void MPU6050_SetClockSource(uint8_t source)
 {
     MPU6050_WriteBits(MPU6050_DEFAULT_ADDRESS, MPU6050_RA_PWR_MGMT_1, MPU6050_PWR1_CLKSEL_BIT, MPU6050_PWR1_CLKSEL_LENGTH, source);
 }
+
+/** Set DLPF_CFG
+ * DLPF_CFG   | Accelerometer(Fs 1khz)   | Gyroscope
+ * -----------+--------------------------------------
+ *         	  |Bandwidth hz 	| Delay ms   |Bandwidth hz | Delay ms   | FS khz
+ * 0x00       | 260				0.0			256				0.98		8
+ * 0x01       | 184				2.0			188				1.9			1
+ * 0x02       | 94				3.0			98				2.8			1
+ * 0x03       | 44				4.9			42				4.8			1
+ * 0x04       | 21				8.5			20				8.3			1
+ * 0x05       | 10				13.8		10				13.4		1
+ * 0x06       | 5				19.0		5				18.6		1
+ * 0x07       | RESERVED					RESERVED					8
+ */
+void MPU6050_SetDigitalLowPassFilter(uint8_t range)
+{
+    MPU6050_WriteBits(MPU6050_DEFAULT_ADDRESS, MPU6050_RA_CONFIG, MPU6050_CFG_DLPF_CFG_BIT, MPU6050_CFG_DLPF_CFG_LENGTH, range);
+}
+
 
 /** Set full-scale gyroscope range.
  * @param range New full-scale gyroscope range value
