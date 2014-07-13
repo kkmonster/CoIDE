@@ -397,7 +397,7 @@ bool MPU6050_TestConnection();
 
 // GYRO_CONFIG register
 uint8_t MPU6050_GetFullScaleGyroRange();
-void MPU6050_SetFullScaleGyroRange(uint8_t range);
+void MPU6050_SetFullScaleGyroRange(u8 range);
 // ACCEL_CONFIG register
 uint8_t MPU6050_GetFullScaleAccelRange();
 void MPU6050_SetFullScaleAccelRange(uint8_t range);

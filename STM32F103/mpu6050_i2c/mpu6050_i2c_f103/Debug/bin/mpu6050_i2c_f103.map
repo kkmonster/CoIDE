@@ -249,6 +249,7 @@ Discarded input sections
  .text          0x00000000        0x0 ..\obj\main.o
  .data          0x00000000        0x0 ..\obj\main.o
  .bss           0x00000000        0x0 ..\obj\main.o
+ .text.delay    0x00000000       0x30 ..\obj\main.o
  .text          0x00000000        0x0 ..\obj\stm32f10x_rcc.o
  .bss           0x00000000        0x0 ..\obj\stm32f10x_rcc.o
  .text.RCC_DeInit
@@ -564,7 +565,7 @@ Linker script and memory map
 
                 0x20005000                _eram = 0x20005000
 
-.text           0x08000000      0xed8
+.text           0x08000000      0xea0
  *(.isr_vector)
  .isr_vector    0x08000000      0x10c ..\obj\startup_stm32f10x_md.o
                 0x08000000                g_pfnVectors
@@ -637,84 +638,82 @@ Linker script and memory map
  .text.GPIO_Init
                 0x080002e8      0x178 ..\obj\stm32f10x_gpio.o
                 0x080002e8                GPIO_Init
- .text.delay    0x08000460       0x30 ..\obj\main.o
-                0x08000460                delay
- .text.main     0x08000490       0x20 ..\obj\main.o
-                0x08000490                main
+ .text.main     0x08000460       0x18 ..\obj\main.o
+                0x08000460                main
  .text.RCC_GetClocksFreq
-                0x080004b0      0x164 ..\obj\stm32f10x_rcc.o
-                0x080004b0                RCC_GetClocksFreq
+                0x08000478      0x164 ..\obj\stm32f10x_rcc.o
+                0x08000478                RCC_GetClocksFreq
  .text.RCC_APB2PeriphClockCmd
-                0x08000614       0x3c ..\obj\stm32f10x_rcc.o
-                0x08000614                RCC_APB2PeriphClockCmd
+                0x080005dc       0x3c ..\obj\stm32f10x_rcc.o
+                0x080005dc                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x08000650       0x3c ..\obj\stm32f10x_rcc.o
-                0x08000650                RCC_APB1PeriphClockCmd
+                0x08000618       0x3c ..\obj\stm32f10x_rcc.o
+                0x08000618                RCC_APB1PeriphClockCmd
  .text.MPU6050_Initialize
-                0x0800068c       0x24 ..\obj\MPU6050.o
-                0x0800068c                MPU6050_Initialize
+                0x08000654       0x24 ..\obj\MPU6050.o
+                0x08000654                MPU6050_Initialize
  .text.MPU6050_SetClockSource
-                0x080006b0       0x20 ..\obj\MPU6050.o
-                0x080006b0                MPU6050_SetClockSource
+                0x08000678       0x20 ..\obj\MPU6050.o
+                0x08000678                MPU6050_SetClockSource
  .text.MPU6050_SetDigitalLowPassFilter
-                0x080006d0       0x20 ..\obj\MPU6050.o
-                0x080006d0                MPU6050_SetDigitalLowPassFilter
+                0x08000698       0x20 ..\obj\MPU6050.o
+                0x08000698                MPU6050_SetDigitalLowPassFilter
  .text.MPU6050_SetFullScaleGyroRange
-                0x080006f0       0x20 ..\obj\MPU6050.o
-                0x080006f0                MPU6050_SetFullScaleGyroRange
+                0x080006b8       0x20 ..\obj\MPU6050.o
+                0x080006b8                MPU6050_SetFullScaleGyroRange
  .text.MPU6050_SetFullScaleAccelRange
-                0x08000710       0x20 ..\obj\MPU6050.o
-                0x08000710                MPU6050_SetFullScaleAccelRange
+                0x080006d8       0x20 ..\obj\MPU6050.o
+                0x080006d8                MPU6050_SetFullScaleAccelRange
  .text.MPU6050_SetSleepModeStatus
-                0x08000730       0x1c ..\obj\MPU6050.o
-                0x08000730                MPU6050_SetSleepModeStatus
+                0x080006f8       0x1c ..\obj\MPU6050.o
+                0x080006f8                MPU6050_SetSleepModeStatus
  .text.MPU6050_GetRawAccelGyro
-                0x0800074c       0xac ..\obj\MPU6050.o
-                0x0800074c                MPU6050_GetRawAccelGyro
+                0x08000714       0xac ..\obj\MPU6050.o
+                0x08000714                MPU6050_GetRawAccelGyro
  .text.MPU6050_WriteBits
-                0x080007f8       0x88 ..\obj\MPU6050.o
-                0x080007f8                MPU6050_WriteBits
+                0x080007c0       0x88 ..\obj\MPU6050.o
+                0x080007c0                MPU6050_WriteBits
  .text.MPU6050_WriteBit
-                0x08000880       0x70 ..\obj\MPU6050.o
-                0x08000880                MPU6050_WriteBit
+                0x08000848       0x70 ..\obj\MPU6050.o
+                0x08000848                MPU6050_WriteBit
  .text.MPU6050_I2C_Init
-                0x080008f0       0x74 ..\obj\MPU6050.o
-                0x080008f0                MPU6050_I2C_Init
+                0x080008b8       0x74 ..\obj\MPU6050.o
+                0x080008b8                MPU6050_I2C_Init
  .text.MPU6050_I2C_ByteWrite
-                0x08000964       0x98 ..\obj\MPU6050.o
-                0x08000964                MPU6050_I2C_ByteWrite
+                0x0800092c       0x98 ..\obj\MPU6050.o
+                0x0800092c                MPU6050_I2C_ByteWrite
  .text.MPU6050_I2C_BufferRead
-                0x080009fc      0x118 ..\obj\MPU6050.o
-                0x080009fc                MPU6050_I2C_BufferRead
+                0x080009c4      0x118 ..\obj\MPU6050.o
+                0x080009c4                MPU6050_I2C_BufferRead
  .text.I2C_Init
-                0x08000b14      0x184 ..\obj\stm32f10x_i2c.o
-                0x08000b14                I2C_Init
- .text.I2C_Cmd  0x08000c98       0x40 ..\obj\stm32f10x_i2c.o
-                0x08000c98                I2C_Cmd
+                0x08000adc      0x184 ..\obj\stm32f10x_i2c.o
+                0x08000adc                I2C_Init
+ .text.I2C_Cmd  0x08000c60       0x40 ..\obj\stm32f10x_i2c.o
+                0x08000c60                I2C_Cmd
  .text.I2C_GenerateSTART
-                0x08000cd8       0x40 ..\obj\stm32f10x_i2c.o
-                0x08000cd8                I2C_GenerateSTART
+                0x08000ca0       0x40 ..\obj\stm32f10x_i2c.o
+                0x08000ca0                I2C_GenerateSTART
  .text.I2C_GenerateSTOP
-                0x08000d18       0x40 ..\obj\stm32f10x_i2c.o
-                0x08000d18                I2C_GenerateSTOP
+                0x08000ce0       0x40 ..\obj\stm32f10x_i2c.o
+                0x08000ce0                I2C_GenerateSTOP
  .text.I2C_AcknowledgeConfig
-                0x08000d58       0x40 ..\obj\stm32f10x_i2c.o
-                0x08000d58                I2C_AcknowledgeConfig
+                0x08000d20       0x40 ..\obj\stm32f10x_i2c.o
+                0x08000d20                I2C_AcknowledgeConfig
  .text.I2C_SendData
-                0x08000d98       0x20 ..\obj\stm32f10x_i2c.o
-                0x08000d98                I2C_SendData
+                0x08000d60       0x20 ..\obj\stm32f10x_i2c.o
+                0x08000d60                I2C_SendData
  .text.I2C_ReceiveData
-                0x08000db8       0x1c ..\obj\stm32f10x_i2c.o
-                0x08000db8                I2C_ReceiveData
+                0x08000d80       0x1c ..\obj\stm32f10x_i2c.o
+                0x08000d80                I2C_ReceiveData
  .text.I2C_Send7bitAddress
-                0x08000dd4       0x3c ..\obj\stm32f10x_i2c.o
-                0x08000dd4                I2C_Send7bitAddress
+                0x08000d9c       0x3c ..\obj\stm32f10x_i2c.o
+                0x08000d9c                I2C_Send7bitAddress
  .text.I2C_CheckEvent
-                0x08000e10       0x60 ..\obj\stm32f10x_i2c.o
-                0x08000e10                I2C_CheckEvent
+                0x08000dd8       0x60 ..\obj\stm32f10x_i2c.o
+                0x08000dd8                I2C_CheckEvent
  .text.I2C_GetFlagStatus
-                0x08000e70       0x68 ..\obj\stm32f10x_i2c.o
-                0x08000e70                I2C_GetFlagStatus
+                0x08000e38       0x68 ..\obj\stm32f10x_i2c.o
+                0x08000e38                I2C_GetFlagStatus
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -730,35 +729,35 @@ Linker script and memory map
  *(.rodata*)
  *(.eh_fram e*)
 
-.glue_7         0x08000ed8        0x0
+.glue_7         0x08000ea0        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08000ed8        0x0
+.glue_7t        0x08000ea0        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08000ed8        0x0
+.vfp11_veneer   0x08000ea0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08000ed8        0x0
+.v4_bx          0x08000ea0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08000ed8        0x0
+.iplt           0x08000ea0        0x0
  .iplt          0x00000000        0x0 ..\obj\stm32f10x_tim.o
 
-.rel.dyn        0x08000ed8        0x0
+.rel.dyn        0x08000ea0        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\stm32f10x_tim.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08000ed8                __exidx_start = .
+                0x08000ea0                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08000ed8                __exidx_end = .
-                0x08000ed8                __etext = .
-                0x08000ed8                _sidata = __etext
+                0x08000ea0                __exidx_end = .
+                0x08000ea0                __etext = .
+                0x08000ea0                _sidata = __etext
 
-.data           0x20000000       0x14 load address 0x08000ed8
+.data           0x20000000       0x14 load address 0x08000ea0
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -783,10 +782,10 @@ Linker script and memory map
                 0x20000014                __data_end__ = .
                 0x20000014                _edata = __data_end__
 
-.igot.plt       0x20000014        0x0 load address 0x08000eec
+.igot.plt       0x20000014        0x0 load address 0x08000eb4
  .igot.plt      0x00000000        0x0 ..\obj\stm32f10x_tim.o
 
-.bss            0x20000014        0xc load address 0x08000eec
+.bss            0x20000014        0xc load address 0x08000eb4
                 0x20000014                . = ALIGN (0x4)
                 0x20000014                __bss_start__ = .
                 0x20000014                _sbss = __bss_start__
@@ -805,7 +804,7 @@ Linker script and memory map
  *(.heap*)
                 0x20000020                __HeapLimit = .
 
-.co_stack       0x20000020      0x400 load address 0x08000ef8
+.co_stack       0x20000020      0x400 load address 0x08000ec0
                 0x20000020                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
  .co_stack      0x20000020      0x400 ..\obj\startup_stm32f10x_md.o
@@ -877,14 +876,14 @@ OUTPUT(mpu6050_i2c_f103.elf elf32-littlearm)
  .debug_ranges  0x000001f8       0xa0 ..\obj\MPU6050.o
  .debug_ranges  0x00000298      0x110 ..\obj\stm32f10x_i2c.o
 
-.debug_line     0x00000000     0x168b
+.debug_line     0x00000000     0x1686
  .debug_line    0x00000000      0x21e ..\obj\system_stm32f10x.o
  .debug_line    0x0000021e       0xa9 ..\obj\startup_stm32f10x_md.o
  .debug_line    0x000002c7      0x3c3 ..\obj\stm32f10x_gpio.o
- .debug_line    0x0000068a      0x1de ..\obj\main.o
- .debug_line    0x00000868      0x4d1 ..\obj\stm32f10x_rcc.o
- .debug_line    0x00000d39      0x467 ..\obj\MPU6050.o
- .debug_line    0x000011a0      0x4eb ..\obj\stm32f10x_i2c.o
+ .debug_line    0x0000068a      0x1d9 ..\obj\main.o
+ .debug_line    0x00000863      0x4d1 ..\obj\stm32f10x_rcc.o
+ .debug_line    0x00000d34      0x467 ..\obj\MPU6050.o
+ .debug_line    0x0000119b      0x4eb ..\obj\stm32f10x_i2c.o
 
 .debug_str      0x00000000     0x11ea
  .debug_str     0x00000000      0x28f ..\obj\system_stm32f10x.o
