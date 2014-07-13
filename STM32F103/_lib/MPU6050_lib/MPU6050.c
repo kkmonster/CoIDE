@@ -332,35 +332,7 @@ void MPU6050_ReadBit(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitNum, uint8_t
 * @param  None
 * @return None
 */
-void MPU6050_I2C_Init()
-{
-  I2C_InitTypeDef  I2C_InitStructure;
-  GPIO_InitTypeDef GPIO_InitStructure;
 
-  /* Enable I2C and GPIO clocks */
-  RCC_APB1PeriphClockCmd(MPU6050_I2C_RCC_Periph, ENABLE);
-  RCC_APB2PeriphClockCmd(MPU6050_I2C_RCC_Port, ENABLE);
-
-  /* Configure I2C pins: SCL and SDA */
-  GPIO_InitStructure.GPIO_Pin =  MPU6050_I2C_SCL_Pin | MPU6050_I2C_SDA_Pin; 
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
-  GPIO_Init(MPU6050_I2C_Port, &GPIO_InitStructure); 
-      
-  /* I2C configuration */
-  I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
-  I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
-  I2C_InitStructure.I2C_OwnAddress1 = MPU6050_DEFAULT_ADDRESS; // MPU6050 7-bit adress = 0x68, 8-bit adress = 0xD0; 
-  I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;
-  I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-  I2C_InitStructure.I2C_ClockSpeed = MPU6050_I2C_Speed;
-  
-  /* Apply I2C configuration after enabling it */
-  I2C_Init(MPU6050_I2C, &I2C_InitStructure);
-  /* I2C Peripheral Enable */  
-  I2C_Cmd(MPU6050_I2C, ENABLE);
-
-}
 
 /**
 * @brief  Writes one byte to the  MPU6050.

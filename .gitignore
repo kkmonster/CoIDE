@@ -14,7 +14,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.coproj
-
+*.cogui
+*.co*
 
 
 # =========================
