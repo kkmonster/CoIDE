@@ -263,7 +263,7 @@ void MPU6050_WriteBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uin
 {
     //      010 value to write
     // 76543210 bit numbers
-    //    xxx   args: bitStart=4, length=3
+    //    XXX   args: bitStart=4, length=3
     // 00011100 mask byte
     // 10101111 original value (sample)
     // 10100011 original & ~mask

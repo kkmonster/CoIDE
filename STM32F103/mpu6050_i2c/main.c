@@ -22,6 +22,7 @@ s16 buffer[6];
 
 int main(void)
 {
+	DMA_setup();
 	MPU6050_I2C_Init();
 	MPU6050_Initialize();
 
