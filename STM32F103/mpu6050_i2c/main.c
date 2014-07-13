@@ -22,17 +22,12 @@ s16 buffer[6];
 
 int main(void)
 {
-
-//	enable iic
 	MPU6050_I2C_Init();
-//	enable mpu6050
 	MPU6050_Initialize();
-//	enable DLF MPU6050_DLPF_BW_xx
-//    MPU6050_SetDigitalLowPassFilter((u8)MPU6050_DLPF_BW_42) ;
-//    MPU//6050_SetDigitalLowPassFilter((u8) 0x03);
+
     while(1)
     {
     	MPU6050_GetRawAccelGyro(buffer) ;
-//    	delay(10);
+    	delay(1);
     }
 }
