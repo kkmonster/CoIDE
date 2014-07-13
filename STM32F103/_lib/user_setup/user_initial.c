@@ -60,6 +60,8 @@ void MPU6050_I2C_Init()
   I2C_Init(I2C2, &I2C_InitStructure);
   /* I2C Peripheral Enable */
 
-  I2C_DMALastTransferCmd(I2C2,ENABLE);
+//  I2C_DMALastTransferCmd(I2C2,ENABLE);
   I2C_Cmd(I2C2, ENABLE);
 }
+
+

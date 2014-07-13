@@ -9,6 +9,7 @@
 
 void MPU6050_I2C_Init();
 void DMA_setup() ;
-
+void systick_init();
+void SysTick_Handler();
 
 #endif
